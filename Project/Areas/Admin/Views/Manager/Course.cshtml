@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Project.Models.EF.Course>
+
+@{
+    ViewBag.Title = "Course";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Course</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MA_COURSE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAME_COURSE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRIPTION_COURSE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRICE_COURSE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS_COURSE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LEVEL_COURSE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TYPE_COURSE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MA_COURSE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAME_COURSE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRIPTION_COURSE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRICE_COURSE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS_COURSE)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.LEVEL_COURSE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TYPE_COURSE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.MA_COURSE  }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
